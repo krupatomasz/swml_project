@@ -60,7 +60,7 @@ def main():
                     continue
 
                 output_row = {}
-                simple_binary_feats = [['school', 'GP'], ['sex', 'F'], ['address', 'U'], ['famsize', 'GT3'], ['Pstatus', 'A'], ['schoolsup', 'no'], ['famsup', 'no'], ['paid', 'no'], ['activities', 'no'], ['nursery', 'no'], ['higher', 'no'], ['internet', 'no'], ['romantic', 'no']]
+                simple_binary_feats = [['school', 'GP'], ['sex', 'F'], ['address', 'U'], ['famsize', 'GT3'], ['Pstatus', 'A'], ['schoolsup', 'yes'], ['famsup', 'yes'], ['paid', 'yes'], ['activities', 'yes'], ['nursery', 'yes'], ['higher', 'yes'], ['internet', 'yes'], ['romantic', 'yes']]
                 for feat in simple_binary_feats:
                     binary_feats.append([feat[0], feat[0], feat[1]])
                 for feat in binary_feats:
