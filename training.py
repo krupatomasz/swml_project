@@ -1,7 +1,10 @@
 import pandas as pd
 from sklearn.neural_network import MLPRegressor
+import sys
 
-mat_data = pd.read_csv('converted_student-mat.csv', delimiter=';').sample(frac=1)  # read and shuffle rows
+csv_name = sys.argv[1]
+
+mat_data = pd.read_csv(csv_name, delimiter=';').sample(frac=1)  # read and shuffle rows
 mat_inputs = mat_data
 
 x_mat = mat_data.drop(columns='G3')
@@ -15,7 +18,7 @@ x_mat_test = x_mat[mat_train_size:]
 y_mat_test = y_mat[mat_train_size:]
 
 mlp = MLPRegressor(solver='lbfgs', hidden_layer_sizes=50, max_iter=500,
-                   random_state=1, validation_fraction=2/9)
+                   random_state=1, validation_fraction=2/9, verbose=True)
 mlp.fit(x_mat_train, y_mat_train)
 print(mlp.score(x_mat_test, y_mat_test))
 print("Done234")
